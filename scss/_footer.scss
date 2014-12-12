@@ -1,0 +1,48 @@
+.footer {
+	color: #fff; 
+	text-align: center;
+	> div { 
+		line-height: 30px; 
+		margin-bottom: 0px;
+	}
+}
+.footer-copyright{ 
+	padding-bottom: 50px;
+}
+.footer-logos{
+	padding-top: 20px;
+	li{
+		display: inline-block;
+		&:first-child{  margin-right: 30px; }
+		a{
+			display: inline-block; 
+			&:hover{ position: relative; top: 1px; }
+		}
+	}	
+}
+.footer-declaim {
+	margin: 0 auto;
+	width: 450px;
+	.age, .txt { height: auto; overflow: hidden;}
+	.age {
+		float: left; width: 48px; height: 48px;
+		background: url(../img/age_guide.jpg) no-repeat;
+	}
+	.txt {
+		text-align: left; padding-left: 10px; color: #ccc;
+		font-size: 12px; line-height: 17px;
+		float: right; width: 300px;
+	}
+}
+.footer-links { 
+	background-color: $navbarBg;
+	a:link, a:visited { 
+		display: inline-block; line-height: 50px;
+		color: #fff;  padding: 0 10px; 
+	} 
+	a:hover {
+		text-decoration: none;
+		background-color: $navbarActiveBg;
+		color:$navbarActiveTxt;
+	}
+}

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>三國圍城</title>
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/stylesheet.css">
+<script src="js/responsive.js"></script>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+$(function(){
+		var ua = navigator.userAgent.toLowerCase();
+		var apmStr = '<li class="qr li-apm"><a href="#" target="_blank"></a></li>';
+		var androidStr = '<li class="qr li-android "><a href="#" target="_blank"></a></li>';
+		var iosStr = '<li class="qr li-apple"><a href="#" target="_blank"></a></li>';
+
+		console.log(apmStr + androidStr + iosStr)
+		$('#qrBtns').html(apmStr + androidStr + iosStr)
+		if (ua.indexOf("mac os") > 0) { $('#qrBtns').html(apmStr + androidStr); }
+		if (ua.indexOf("android") > 0) { $('#qrBtns').html(apmStr + iosStr); }
+})
+</script>
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top gr-nav" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      	<div class="left">
+      		<span class="sr-only">Toggle navigation</span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+      	</div>
+        <div class="right">選單</div>
+        
+      </button>
+      <a class="navbar-brand" href="#">三國圍城</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav hidden-sm hidden-xs">
+        <li><a href="#" class="go-scroll" data-toid="topArea">首頁</a></li><li><a href="#" class="go-scroll" data-toid="newsArea">最新消息</a></li><li><a href="#" class="go-scroll" data-toid="featureArea">遊戲特色</a></li><li class=""><a href="#" data-toggle="modal" data-target="#faqModal">FAQ</a></li><li class=""><a href="#" data-toggle="modal" data-target="#reportModal">線上回報</a></li><li><a href="#" target="_blank">購買元寶</a></li>
+      </ul>
+      <ul class="nav navbar-nav hidden-lg hidden-md">
+        <li><a href="#" class="go-scroll" data-toid="topArea" data-toggle="collapse" data-target=".navbar-collapse">首頁</a></li>
+        <li><a href="#" class="go-scroll" data-toid="newsArea" data-toggle="collapse" data-target=".navbar-collapse">最新消息</a></li>
+        <li><a href="#" class="go-scroll" data-toid="featureArea" data-toggle="collapse" data-target=".navbar-collapse">遊戲特色</a></li></li><li class=""><a href="#" data-toggle="modal" data-target="#faqModal">FAQ</a></li><li class=""><a href="#" data-toggle="modal" data-target="#reportModal">線上回報</a></li><li><a href="#" target="_blank">購買元寶</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" id="topArea">
+	<div class="container">
+		<a class="fb-box-m visible-sm visible-xs"></a>
+		<div class="col-md-8 qrcodebtn-group">
+			<ul id="qrBtns">
+				<!-- <li class="qr li-apm"><a href="#" target="_blank"></a></li>
+				<li class="qr li-android "><a href="#" target="_blank"></a></li>
+				<li class="qr li-apple"><a href="#" target="_blank"></a></li> -->
+			</ul>
+		</div>
+		
+	</div>
+</div>
+<div class="container">
+	<div class="row banner-group">
+		<div class="col-md-6"><a href="#"><img src="img/banner_1.jpg" height="193" class="img-responsive" ></a></div>
+		<div class="col-md-6"><a href="#"><img src="img/banner_2.jpg" height="193" class="img-responsive" ></a></div>
+	</div>
+	<div class="row">		
+		<div class="col-md-6 hidden-xs hidden-sm">
+			<h2><span class="title pv">真實遊戲影片</span></h2>
+			<iframe width="555" height="380" src="//www.youtube.com/embed/v3_4_4vA-lQ?rel=0&wmode=transparent" frameborder="0" allowfullscreen></iframe>
+			<h2><span class="title fb">加入我們，獲得更多粉絲專屬好康</span></h2>
+			<div class="fb-box">
+				<div class="fb-like-box" data-href="https://www.facebook.com/AppParty" data-width="350" data-height="80" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="news-list" id="newsArea">
+				<ul class="nav nav-tabs nav-justified hidden-sm hidden-xs"><li class="active first"><a href="#">最新消息</a></li><li><a href="#">遊戲活動</a></li><li><a href="">系統公告</a></li></ul>
+				<ul class="news-title">
+					<li><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag new">遊戲</span><span class="text">新聞標題一二三四五六七八九零</span></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag new">遊戲</span><span class="text">新聞標題一二三四五六七八九零一二三四五</span></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag sys">系統</span><span class="text">新聞標題一二三四五六七八九零一二三四五六</span></a></li> 
+					<li><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag evt">活動</span><span class="text">新聞標題一二三四五六七八九零一二三四五六</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag evt">活動</span><span class="text">新聞標題一二三四五六七八九零一二三四五六</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag sys">系統</span><span class="text">新聞標題一二三四五六七八九零一二三四五...</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag evt">活動</span><span class="text">新聞標題一二三四五六七八九零一二三四五六...</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag sys">系統</span><span class="text">新聞標題一二三四五六七八九零一二三四五六</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag evt">活動</span><span class="text">新聞標題一二三四五六七八九零一二三四五...</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag sys">系統</span><span class="text">新聞標題一二三四五六七八九零一二三四五</span></a></li>
+					<li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target="#newsModal"><span class="tag evt">活動</span><span class="text">新聞標題一二三四五六七八九零一二三四五六</span></a></li> 
+				</ul>
+				<ul class="pager">
+				  <li class="previous"><a href="#"><i class="glyphicon glyphicon-chevron-left"></i> 上一頁</a></li>
+				  <li class="next"><a href="#">下一頁 <i class="glyphicon glyphicon-chevron-right"></i></a></li>
+				</ul>
+			</div>
+			<!-- news content -->
+		</div>
+	</div>
+	
+	
+	<div class="feature" id="featureArea">
+		<h2><span class="title feature">遊戲特色</span></h2>
+		<div class="row">
+			<div class="col-md-6 feature-box">
+				<h3><i></i>千軍萬馬一指上手，即時戰略攻其不備</h3>
+				<p>是想當個率領大軍直搗黃龍的猛將，還是想當個運籌帷幄，決勝千里的謀略之帥呢？《三國圍城》採用最刺激的即時戰略系統，加上簡潔的操作方式，讓你無論在哪都輕鬆上手，指揮千軍萬馬一指搞定，上百名英雄與12種兵種任意搭配選擇，快來秀比孫子兵法更精湛的戰技吧！</p>
+				<p><img src="img/feature_1.jpg" class="img-responsive" ></p>
+			</div>
+			<div class="col-md-6 feature-box">
+				<h3><i></i>3D全景市鎮構圖，打造專屬壯闊城池</h3>
+				<p>極細緻的3D構圖，可愛逗趣的村民AI，讓你彷彿像是真的在經營一塊屬於自己的城池，是要開拓糧倉發展資源，還是強化防禦工事訓練軍隊，發揮你的經營頭腦，開創你的強大王國。</p>
+				<p><img src="img/feature_2.jpg" class="img-responsive" ></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 feature-box">
+				<h3><i></i>超萌療癒系人物造型，爆笑逗趣的劇情對話</h3>
+				<p>所有三國武將一個個化身成可愛Q萌造型，爆笑逗趣的劇情對話，讓你天天心情爽翻天，療癒你的寂寞，融化你的小心肝。</p>
+				<p><img src="img/feature_3.jpg" class="img-responsive" ></p>
+			</div>
+			<div class="col-md-6 feature-box">
+				<h3><i></i>角色養成裝備強化，培養你的英雄名將</h3>
+				<p>《三國圍城》武將取得方式簡單，天天讓你都能招募武將，快速建立自己的武將天團，還能強化自己喜愛的武將，就連廖化都能當大將！</p>
+				<p><img src="img/feature_4.jpg" class="img-responsive" ></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 feature-box">
+				<h3><i></i>軍團模式社交系統，戰友召集仇敵廝殺</h3>
+				<p>破除手機遊戲一向只能單獨進行遊戲的缺點，完美的軍團招募，可集合所有志同道合的戰友一同攻城掠地無往不利；獨特的仇敵設定，讓你能如同半澤直樹一樣，有仇報仇必定加倍奉還！只要仇敵一鬆懈，立馬反攻奪回榮耀！</p>
+				<p><img src="img/feature_5.jpg" class="img-responsive" ></p>
+			</div>
+			<div class="col-md-6 feature-box">
+				<h3><i></i>每日簽到活動任務，免費元寶源源不絕</h3>
+				<p>《三國圍城》挑戰真正的『免費』遊戲，每日定時更新許多活動任務，讓你元寶獎勵用不完，每天輕鬆無負擔的暢快遊戲。</p>
+				<p><img src="img/feature_6.jpg" class="img-responsive" ></p>
+			</div>
+		</div>
+		
+	</div>
+	
+
+</div> <!-- container end -->
+
+<div class="footertop">
+</div>
+<div class="footer">
+	<div class="footer-links">
+		<div class="container text-center">
+			<div class="text bottom-links"><a href="#" class="go-scroll" data-toid="topArea">首頁</a><a href="#" class="go-scroll" data-toid="newsArea">最新消息</a><a href="#" class="go-scroll" data-toid="featureArea">遊戲特色</a><a href="#" data-toggle="modal" data-target="#faqModal">FAQ</a<a href="#" data-toggle="modal" data-target="#reportModal">線上回報</a><a href="#">購買元寶</a></div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<ul class="footer-logos"><li><a href="//www.app-master.com.tw/ " class="apm" target="_blank"></a></li><li><a href="//www.kong.net" target="_blank" class="kongnet"></a></li></ul>
+			<div class="footer-declaim clearfix">
+				<div class="age"></div>
+				<div class="txt">&copy; 2014 AppMaster All Rights Reserved. <br>請注意使用時間，避免沉迷於遊戲。<br>本遊戲部份內容需要購買遊戲幣消費。</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- news content -->
+<!-- Modal -->
+<div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">新聞標題一二三四五六七八九零</h4>
+      </div>
+      <div class="modal-body">
+        <p>Thurrott報導，微軟將在4月的開發者大會上公佈代號為「Threshold」的下一代Windows作業系統，屆時正式名稱可能為Windows 9，正式版則計畫於2015年4月上市。</p><p>媒體報導，微軟將在4月的開發者大會上公佈代號為「Threshold」的下一代Windows作業系統，屆時正式名稱可能為Windows 9，正式版則計畫於2015年4月上市。</p><p>部落格Winsupersite作者Paul Thurrott引述匿名消息人士報導，微軟僅會以討論「願景」的方式對開發人員及客戶介紹Threshold，因為Threshold開發要到Build 2014開發人員大會後才會正式啟動，正式版則計畫於2015年4月上市。而期間會有三個版本推出，但不確定其名稱為何（如Beta、Release Candidate等等）。</p><p><img src="img/feature_3.jpg" class="img-responsive"></p><p>Thurrott報導，微軟預計Threshold正式版本可能會命名為Windows 9。而Windows 8首次引入，但市場反應不佳的新式介面也會成為新版作業系統的工作重點，不過無法得知改變程度為何，只能確定會包含適合桌機版本的視窗模式。 </p><p>對微軟而言，Windows Threshold意義重大，因為蘋果iOS及Google Android引領行動化時代風騷，微軟試圖以Windows 8改寫產業版圖，但其觸控介面市場反應不佳，Surface平板銷售也相當疲弱。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- Modal end -->	
+
+<!-- faq Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">常見問題</h4>
+      </div>
+      <div class="modal-body">
+      	<h5>【關於儲值】</h5>
+        <ul class="faq">
+        	<li>
+						<div class="q"><i>Q</i><span class="txt">為什麼儲值後元寶沒有增加？</span></div>
+						<div class="a"><i>A</i><span class="txt">請使用官網上方的「線上回報」系統，問題類型選擇[儲值購點]，將個人資料填妥後，依照你所付款的方式分別提供付款資訊，我們會盡快幫您查詢。</span>
+							<p>★ Android 版本 ★</p>
+							<p>請提供購買時的訂單編號。（如果有多筆訂單，又不知道有問題的是哪筆，請將所有的訂單編號都寫上去即可）<br>
+							如果儲值時是使用 Google 的電子錢包，請留下您的 Google 信箱（儲值後 Google 會寄一封交易完成的確認信件，麻煩您確認 Gmail 信箱地址）
+							</p>
+							<p>★ iOS版本 ★</p>
+							<p>請您提供「App Store 購買紀錄畫面」或是 Apple 發送到您 Apple ID 信箱中的「收據信件」之訂單編號。
+							您也可以提供「App Store 購買紀錄畫面」或是「收據信件」的截圖畫面，但需包含以下的資料：<br>訂單編號、購買數量（品項）、購買日期、購買金額。
+							（如果同時間內有多筆訂單，不知道是哪一筆訂單有問題，請將所有的訂單編號都提供即可）
+							（截圖內如有私人資料，您可以做加工處理以免個資洩漏）<br>App Store 購買紀錄畫面，您可以至 PC 的 iTunes 確認。登入方法請參考
+							<a href="http://support.apple.com/ja-tw/HT2727" target="_blank"> Apple 官網</a>。<br>
+							※由於 Apple 發送之「收據信件」會比較晚才會收到，您可以先提供購買紀錄畫面的截圖，如此一來可以加快我們處理的時間。
+							</p>
+							<p>★ 網頁轉點 ★</p>
+							<p>請提供角色暱稱、購買日期、購買金額。<br>
+							(相關資訊可至APP大師網站的<a href="http://member.app-master.com.tw/member/purchase/Record.aspx" target="_blank">儲值記錄</a>中查看。)</p>
+						</div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">我沒有信用卡，可以用點數卡或是其他方式儲值嗎？</span></div>
+        		<div class="a"><i>A</i><span class="txt">可點選官網上方的<a href="http://member.app-master.com.tw/member/purchase/gameselect.aspx" target="_blank">網頁儲值</a>，進入 APP 大師平台使用轉點方式儲值。儲值教學請參考<a href="http://ilc.app-master.com.tw/index.aspx?id=32770" target="_blank">此網頁</a>。</span></div>
+        	</li>
+        </ul>
+        <h5>【關於遊戲帳號&安裝】</h5>
+        <ul class="faq">
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">遊戲內顯示需要更新新版本，但是下載新版本後還是一直叫我更新，在 Google PLAY 商店和 App Store 也找不到可更新的版本了。</span></div>
+        		<div class="a"><i>A</i><span class="txt">請將遊戲完全關閉後再打開，關閉方式因手機會有不同，如果不知道如何關閉，建議可以將手機重新開機。</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">如何取得遊戲帳號？</span></div>
+        		<div class="a"><i>A</i><span class="txt">我們提供玩家使用手機號碼、Facebook 帳號、E-Mail、OMG 帳號或免帳號快速登入體驗遊戲，並能夠於遊戲內迅速切換帳號。<br>(※使用快速登入有可能會在重新安裝或是更新APP時，遺失您的遊戲帳號進度，建議盡速綁定帳號，綁定方式教學請參考<a href="http://ilc.app-master.com.tw/index.aspx?id=27033" target="_blank">此網頁</a>。)</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">我沒有綁定帳號，帳號不見了該怎麼辦？</span></div>
+        		<div class="a"><i>A</i><span class="txt">可以利用<a href="http://ilc.app-master.com.tw" target="_blank">官網</a>上方的線上回報系統，或是直接撥打客服專線 (02-7722-2808)，提供您的角色暱稱和一些基本資料，我們會協助您將帳號找回來哦～</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">我想要切換到其他伺服器進行遊戲，該怎麼做？</span></div>
+        		<div class="a"><i>A</i><span class="txt">登入遊戲後請點選右下視窗介面中的「設置」按鈕，再點選帳號及伺服器選項，即會列出目前遊戲中所有伺服器的選單，只要點選伺服器便會自動登入該伺服器中。</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">角色ID可否更改？</span></div>
+        		<div class="a"><i>A</i><span class="txt">目前遊戲中並不支援角色ID變更的功能。</span></div>
+        	</li>
+        </ul>
+        <h5>【關於遊戲內容】</h5>
+        <ul class="faq">
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">我該如何獲得武將？</span></div>
+        		<div class="a"><i>A</i><span class="txt">一開始可使用酒館內的招募方式獲得武將，也可以經由戰役獲得各個武將的『武魂』，收集到一定數量的武魂後即可招募該武將，另外也可選擇使用神秘商店購買武魂的方式，讓您能更快速的獲得您所想要的武將。</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">如何獲得聲望？</span></div>
+        		<div class="a"><i>A</i><span class="txt">遊戲中所有戰鬥均可獲得聲望，包括掠奪、戰役及演武場挑戰，另外在精采活動中的每日登錄與簽到也可以獲得聲望，擁有聲望後即可大量招募新的武將。</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">遊戲中該怎麼獲得免費的元寶？</span></div>
+        		<div class="a"><i>A</i><span class="txt">從登錄禮包、每日簽到都會獲得免費元寶，完成每日任務也能獲得免費元寶，更多取得元寶的方式在遊戲中的精彩活動都可以看到。</span></div>
+        	</li>
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">該如何增加可使用的兵種以及強化我的士兵？</span></div>
+        		<div class="a"><i>A</i><span class="txt">只要升級兵營即可增加兵種，兵營等級越高，可生產的士兵數量及兵種越多，另外建設太學閣並使用研究功能，可提升自身兵種的等級。</span></div>
+        	</li>
+        </ul>
+        <h5>【其他】</h5>
+        <ul class="faq">
+        	<li>
+        		<div class="q"><i>Q</i><span class="txt">這個遊戲有粉絲團嗎？</span></div>
+        		<div class="a"><i>A</i><span class="txt"><a href="#" target="_blank">三國圍城粉絲團</a>提供最即時的第一手消息及好康活動訊息，趕快加入粉絲團獲得更多優惠資訊喔！</span></div>
+        	</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- faq Modal end -->
+
+<!-- report Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="reportModalLabel">線上回報</h4>
+      </div>
+		<div class="modal-body">
+			<form class="form-horizontal" role="form">
+			<fieldset>
+				<div class="form-group">
+					<label for="inputServer" class="col-sm-2 control-label">伺服器</label>
+					<div class="col-sm-8">
+						<select id="" name="" class="form-control" readonly><option>請選擇伺服器</option></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputQuestionType" class="col-sm-2 control-label">問題類型</label>
+					<div class="col-sm-8">
+						<select id="inputQuestionType" name="" class="form-control">
+							<option>帳號密碼</option>
+							<option>儲值購點</option>
+							<option>遊戲安裝與連線障礙</option>
+							<option>遊戲建議</option>
+							<option>BUG回報</option>
+							<option>其他</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputName" class="col-sm-2 control-label">角色名稱</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="inputName" placeholder="EX: 南港金城武">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-8">
+						<input type="email" class="form-control" id="inputEmail" placeholder="EX: johndoe123@yahoo.com.tw">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputTelephone" class="col-sm-2 control-label">手機號碼</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="inputTelephone" placeholder="EX: 0988-808-888">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputTitle" class="col-sm-2 control-label">信件標題</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="inputTitle" placeholder="EX: 帳號登入不了">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputContent" class="col-sm-2 control-label">回報內容</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="8"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="txtChkCode" class="col-sm-2 control-label">驗證碼</label>
+					<div class="col-sm-8">
+                        <input name="txtChkCode" type="text" id="txtChkCode" class="form-control" style="width:100px;vertical-align:top;display:inline;">
+                        <img id="imgChkCode" src="//placehold.it/100x28" align="absmiddle" style="height:28px;width:100px;border-width:0px;vertical-align:top">
+                        <a href="javascript:void(0)"><img id="imgReload" src="img/cb01.png" align="absmiddle" style="vertical-align:top;border:0" onclick="ChangeChkCode()"></a>
+					</div>
+				</div>
+
+        </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">關閉</button>
+        <button type="button" class="btn btn-primary btn-lg">送出</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- reportModal End -->
+
+<script>
+
+$('.navbar-nav li').hover(function(){
+	$(this).addClass('active').siblings().removeClass('active');
+}, function(){
+	$('.navbar-nav li').removeClass('active');
+});
+$('.go-scroll').click(function(e){
+	e.preventDefault();
+	var id = $(this).data('toid');
+	$('html,body').animate({ scrollTop: $("#"+id).offset().top-50 }, 'slow');
+});
+
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
